@@ -3,6 +3,7 @@
     # may be redefined in command line on configuration stage
     # "BUILD_LIBRDKAFKA%": "<!(echo ${BUILD_LIBRDKAFKA:-1})"
     "BUILD_LIBRDKAFKA%": "<!(node ./util/get-env.js BUILD_LIBRDKAFKA 1)",
+    "PLATFORM_ARCH%": "<!(node ./util/get-platform-arch.js)",
   },
   "targets": [
     {
@@ -98,8 +99,8 @@
                       'OS=="mac"',
                       {
                         "libraries": [
-                          "../build/deps/librdkafka.dylib",
-                          "../build/deps/librdkafka++.dylib",
+                          "../prebuilds/<(PLATFORM_ARCH)/librdkafka.dylib",
+                          "../prebuilds/<(PLATFORM_ARCH)/librdkafka++.dylib",
                         ],
                       }
                     ]

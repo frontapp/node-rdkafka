@@ -1,0 +1,10 @@
+prefix=/Users/kenneth.lam/Developer/node-rdkafka/prebuilds/darwin-arm64
+libdir=/Users/kenneth.lam/Developer/node-rdkafka/prebuilds/darwin-arm64
+includedir=/Users/kenneth.lam/Developer/node-rdkafka/prebuilds/darwin-arm64/include
+
+Name: librdkafka++-static
+Description: The Apache Kafka C/C++ library (static)
+Version: 2.1.1
+Requires: rdkafka-static
+Cflags: -I${includedir}
+Libs: -L${libdir} ${pc_sysrootdir}${libdir}/librdkafka++.a -lm -lcurl -lsasl2 -lz -ldl -lpthread

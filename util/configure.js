@@ -4,9 +4,10 @@ var query = process.argv[2];
 
 var fs = require('fs');
 var path = require('path');
+const os = require('os');
 
 var baseDir = path.resolve(__dirname, '../');
-var releaseDir = path.join(baseDir, 'build', 'deps');
+var releaseDir = path.join(baseDir, 'prebuilds', os.platform() + "-" + os.arch());
 
 var isWin = /^win/.test(process.platform);
 
