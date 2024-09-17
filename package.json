@@ -10,7 +10,7 @@
     "test": "make test",
     "install": "node-gyp-build",
     "prepack": "node ./ci/prepublish.js",
-    "prebuilds": "prebuildify --arch=arm64 --target=20.11.0 --strip"
+    "prebuilds": "prebuildify --arch=arm64 --target=20.11.0 --strip --include build --cwd ./"
   },
   "keywords": [
     "kafka",

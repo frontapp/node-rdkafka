@@ -7,7 +7,7 @@ var path = require('path');
 const os = require('os');
 
 var baseDir = path.resolve(__dirname, '../');
-var releaseDir = path.join(baseDir, 'prebuilds', os.platform() + "-" + os.arch());
+var releaseDir = path.join(baseDir, 'build', 'deps');
 
 var isWin = /^win/.test(process.platform);
 

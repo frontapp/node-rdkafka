@@ -99,8 +99,8 @@
                       'OS=="mac"',
                       {
                         "libraries": [
-                          "../prebuilds/<(PLATFORM_ARCH)/librdkafka.dylib",
-                          "../prebuilds/<(PLATFORM_ARCH)/librdkafka++.dylib",
+                          "../build/deps/librdkafka.dylib",
+                          "../build/deps/librdkafka++.dylib",
                         ],
                       }
                     ]
