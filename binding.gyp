@@ -100,7 +100,7 @@
                         "libraries": [
                           "../build/deps/librdkafka.dylib",
                           "../build/deps/librdkafka++.dylib",
-                          "-Wl,-rpath='./build/deps'",
+                          "-Wl,-rpath,./build/deps",
                         ],
                       }
                     ]
