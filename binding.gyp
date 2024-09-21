@@ -97,15 +97,15 @@
                     [
                       'OS=="mac"',
                       {
-                        'xcode_settings': {
-                          'OTHER_LDFLAGS': [
+                        'link_settings': {
+                          'ldflags': [
                             '-Wl,-rpath,@loader_path/../deps'
                           ],
+                          'libraries': [
+                            '../build/deps/librdkafka.dylib',
+                            '../build/deps/librdkafka++.dylib',
+                          ],
                         },
-                        "libraries": [
-                          "../build/deps/librdkafka.dylib",
-                          "../build/deps/librdkafka++.dylib",
-                        ],
                       }
                     ]
                   ],
