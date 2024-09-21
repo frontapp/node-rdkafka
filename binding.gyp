@@ -100,7 +100,30 @@
                         "libraries": [
                           "../build/deps/librdkafka.dylib",
                           "../build/deps/librdkafka++.dylib",
+                          "-Wl,-rpath,@loader_path/../deps",
                         ],
+                        "postbuilds": [
+                          {
+                            "postbuild_name": "Change librdkafka.1.dylib load path",
+                            "action": [
+                              "install_name_tool", 
+                              "-change", 
+                              "<(module_root_dir)/build/deps/librdkafka.1.dylib", 
+                              "@rpath/librdkafka.1.dylib", 
+                              "<(module_root_dir)/build/Release/node-librdkafka.node"
+                            ]
+                          },
+                          {
+                            "postbuild_name": "Change librdkafka++.1.dylib load path",
+                            "action": [
+                              "install_name_tool", 
+                              "-change", 
+                              "<(module_root_dir)/build/deps/librdkafka++.1.dylib", 
+                              "@rpath/librdkafka++.1.dylib", 
+                              "<(module_root_dir)/build/Release/node-librdkafka.node"
+                            ]
+                          }
+                        ]
                       }
                     ]
                   ],
