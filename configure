@@ -10,6 +10,6 @@ scriptdir=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
 
 pushd ./deps/librdkafka &> /dev/null
 
-./configure --prefix="${scriptdir}/build/deps" --libdir="${scriptdir}/build/deps" $*
+./configure --prefix="${scriptdir}/build/deps" --libdir="${scriptdir}/build/deps" --install-deps --source-deps-only --enable-static $*
 
 popd &> /dev/null
