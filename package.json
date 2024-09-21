@@ -1,5 +1,5 @@
 {
-  "name": "node-rdkafka",
+  "name": "@frontapp/node-rdkafka",
   "version": "v2.16.1",
   "description": "Node.js bindings for librdkafka",
   "librdkafka": "2.1.1",
