@@ -98,9 +98,9 @@
                       'OS=="mac"',
                       {
                         "libraries": [
-                          "-Wl,-rpath,@loader_path/../deps",
                           "../build/deps/librdkafka.dylib",
                           "../build/deps/librdkafka++.dylib",
+                          "-Wl,-rpath,@loader_path/../deps",
                         ],
                       }
                     ]
