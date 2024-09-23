@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { spawn } = require('child_process');
+const { exit } = require('process');
 
 async function main() {
   if (fs.existsSync('./build')) {
@@ -18,9 +19,10 @@ async function main() {
       `./prebuild/${prebuildFileName}.tar.gz`
     ]);
     tarCmd.stdout.pipe(process.stdout);
-    tarCmd.stderr.pipe(process.stderr)
+    tarCmd.stderr.pipe(process.stderr);
   } else {
-    throw new Error(`Missing node-rdkafka for arch "${process.arch}" and ABI "${process.versions.modules}". Prebuild bindings first.`);
+    process.stdout.write(`Missing node-rdkafka for arch "${process.arch}" and ABI "${process.versions.modules}". Prebuild bindings first.`);
+    exit(1);
   }
 }
 
