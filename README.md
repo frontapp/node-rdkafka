@@ -9,9 +9,11 @@ Copyright (c) 2016 Blizzard Entertainment.
 
 [![npm version](https://badge.fury.io/js/node-rdkafka.svg)](https://badge.fury.io/js/node-rdkafka)
 
-# Front - Foundations
+# Front
 
 Doc: [Prebuild Node-rdkafka Learnings](https://docs.google.com/document/d/1Xt22ieNMptySOzUklxicPuTr_5Pzlt8rks_ZwMJuYA4/edit#heading=h.b5eibbu0cqtd)
+
+The motivation for this fork is to create prebuilds and instantly install node-rdkafka when injected as a node_module.
 
 **How to create prebuilds:** npm run prebuilds
 1. Runs node-gyp rebuild to build from source
