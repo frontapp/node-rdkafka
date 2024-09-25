@@ -8,20 +8,19 @@ async function main() {
     return;
   }
 
-  const prebuildFileName = `platform-${process.arch}-ABI-${process.versions.modules}`;
-  const prebuildFilePath = `./prebuild/${prebuildFileName}.tar.gz`;
-
+  const prebuildFileName = `${process.platform}-${process.arch}-ABI-${process.versions.modules}`;
+  const prebuildFilePath = `./prebuilds/${prebuildFileName}.tar.gz`;
 
   if (fs.existsSync(prebuildFilePath)) {
     process.stdout.write(`-- Unpacking "${prebuildFilePath}" archive...\n`);
     const tarCmd = spawn('tar', [
       'xzvf',
-      `./prebuild/${prebuildFileName}.tar.gz`
+      `${prebuildFilePath}`
     ]);
     tarCmd.stdout.pipe(process.stdout);
     tarCmd.stderr.pipe(process.stderr);
   } else {
-    process.stdout.write(`Missing node-rdkafka for arch "${process.arch}" and ABI "${process.versions.modules}". Prebuild bindings first.`);
+    process.stdout.write(`Missing node-rdkafka for ${prebuildFilePath}". Building from source.`);
     exit(1);
   }
 }

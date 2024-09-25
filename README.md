@@ -9,6 +9,22 @@ Copyright (c) 2016 Blizzard Entertainment.
 
 [![npm version](https://badge.fury.io/js/node-rdkafka.svg)](https://badge.fury.io/js/node-rdkafka)
 
+# Front - Foundations
+
+Doc: [Prebuild Node-rdkafka Learnings](https://docs.google.com/document/d/1Xt22ieNMptySOzUklxicPuTr_5Pzlt8rks_ZwMJuYA4/edit#heading=h.b5eibbu0cqtd)
+
+**How to create prebuilds:** npm run prebuilds
+1. Runs node-gyp rebuild to build from source
+2. Tarballs /build and stores in /prebuilds
+
+**How to install files:** npm install
+1. Searches for files in /build or proper prebuild platform + arch + ABI in /prebuilds
+2. Will default to node-gyp rebuild if no prebuilds found
+
+**Caveats:**
+1. The existing solution only works on MacOS, we will need to put in work to extend to Linux and/or Windows machines
+2. Can only create prebuilds using the current platform + architecture + node version
+
 # Looking for Collaborators!
 
 I am looking for *your* help to make this project even better! If you're interested, check [this out](https://github.com/Blizzard/node-rdkafka/issues/628)

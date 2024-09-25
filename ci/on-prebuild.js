@@ -2,12 +2,13 @@ const fs = require('fs');
 const { spawn } = require('child_process');
 
 async function main() {
-  const prebuildFileName = `platform-${process.arch}-ABI-${process.versions.modules}`;
+  const prebuildFileName = `${process.platform}-${process.arch}-ABI-${process.versions.modules}`;
+  const prebuildFilePath = `./prebuilds/${prebuildFileName}.tar.gz`;
 
-  process.stdout.write(`Preparing "./prebuild/${prebuildFileName}.tar.gz" archive...\n`);
+  process.stdout.write(`Preparing "./prebuilds/${prebuildFileName}.tar.gz" archive...\n`);
   const tarCmd = spawn('tar', [
     'czvf',
-    `./prebuild/${prebuildFileName}.tar.gz`,
+    `${prebuildFilePath}`,
     './build',
   ]);
   tarCmd.stdout.pipe(process.stdout);
