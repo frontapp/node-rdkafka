@@ -13,15 +13,19 @@ Copyright (c) 2016 Blizzard Entertainment.
 
 Doc: [Prebuild Node-rdkafka Learnings](https://docs.google.com/document/d/1Xt22ieNMptySOzUklxicPuTr_5Pzlt8rks_ZwMJuYA4/edit#heading=h.b5eibbu0cqtd)
 
-The motivation for this fork is to create prebuilds and instantly install node-rdkafka when injected as a node_module.
+Node Package: [node-rdkafka](https://github.com/orgs/frontapp/packages/npm/package/node-rdkafka)
 
-**How to create prebuilds:** npm run prebuilds
-1. Runs node-gyp rebuild to build from source
-2. Tarballs /build and stores in /prebuilds
+Current Node Version: **v20.11.0**
 
-**How to install files:** npm install
-1. Searches for files in /build or proper prebuild platform + arch + ABI in /prebuilds
-2. Will default to node-gyp rebuild if no prebuilds found
+The motivation for this fork is to create prebuilds to instantly install node-rdkafka at build time.
+
+**How to create prebuilds:** *npm run prebuilds*
+1. Runs *node-gyp rebuild* to build from source
+2. Tarballs */build* and stores in */prebuilds*
+
+**How to install files:** *npm install*
+1. Searches for files in */build* or proper prebuild platform + arch + ABI in */prebuilds*
+2. Will default to *node-gyp rebuild* if no prebuilds found
 
 **Caveats:**
 1. The existing solution only works on MacOS, we will need to put in work to extend to Linux and/or Windows machines
