@@ -128,10 +128,8 @@ export const CODES: { ERRORS: {
   ERR__AUTO_OFFSET_RESET: number,
   /** Partition log truncation detected (**-139**) */
   ERR__LOG_TRUNCATION: number,
-
   /** End internal error codes (**-100**) */
   ERR__END: number,
-
   /* Kafka broker errors: */
   /** Unknown broker error (**-1**) */
   ERR_UNKNOWN: number,
